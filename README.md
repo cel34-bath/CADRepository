@@ -29,9 +29,9 @@ This is a collection of publications and presentations I have given relating to 
 
 This is the first implementation of CAD in *Macaulay2*, allowing for the computation of an Open CAD (full-dimensional cells only) for sets of real polynomials with rational coefficients, enabling users to solve existential problems involving strict inequalities. The current implementation employs the Lazard projection and introduces a new heuristic for choosing the variable ordering.
 
-- [`Macaulay2/CylindricalAlgebraicDecomposition.m2`](./Macaulay2/CylindricalAlgebraicDecomposition.m2)
+- Code and documentation: [`Macaulay2/CylindricalAlgebraicDecomposition.m2`](./Macaulay2/CylindricalAlgebraicDecomposition.m2)
 - Read the ArXiv pre-print [here](https://arxiv.org/abs/2503.21731)
-- Get started with Macaulay2: (https://www2.macaulay2.com/Macaulay2/)
+- Get started with Macaulay2 [here](https://www2.macaulay2.com/Macaulay2/)
 
 ---
 
