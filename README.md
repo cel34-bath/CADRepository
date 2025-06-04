@@ -13,7 +13,7 @@ However, CAD is computationally expensive, with a worst-case complexity that is 
 For an overview of CAD and its theory, see:
 
 - G.E. Collins, *Quantifier Elimination for Real Closed Fields by Cylindrical Algebraic Decomposition*, Springer, 1975.
-- Mats Jirstrand, *Cylindrical Algebraic Decomposition - an Introduction*, Technical Report, Link¨oping University, 1995.
+- Mats Jirstrand, *Cylindrical Algebraic Decomposition - an Introduction*, Technical Report, Linköping University, 1995.
 - J.H. Davenport & J. Heintz, *Real Quantifier Elimination is Doubly Exponential*, JSC 1988.  
 - Maple's [RegularChains](https://www.maplesoft.com/support/help/Maple/view.aspx?path=RegularChains) and [QuantifierElimination](https://www.maplesoft.com/support/help/Maple/view.aspx?path=QuantifierElimination) packages.  
 
