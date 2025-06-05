@@ -4,11 +4,11 @@ This is a repository containing code, tools, and documentation relating to Cylin
 
 ## Introduction to CAD
 
-CAD is an important algorithm in symbolic computation for studying real semi-algebraic sets. It takes a set of multivariate polynomials and decomposes the solution space into disjoint regions known as \textit{cells}, within which the initial polynomials are invariant with respect to some property, such as sign. In satisfiability problems, this reduces the search from the uncountable real space to a finite number of regions.
+CAD is an important algorithm in symbolic computation for studying real semi-algebraic sets. It takes a set of multivariate polynomials and decomposes the solution space into disjoint regions known as *cells*, within which the initial polynomials are invariant with respect to some property, such as sign. In satisfiability problems, this reduces the search from the uncountable real space to a finite number of regions.
 
 CAD was first introduced as a method for performing *quantifier elimination* (QE) over the reals by Collins in 1975 and has applications in algebraic geometry and fields such as robotics, economics, and biology. CAD is well suited for computation and has been implemented in many widely used computer algebra packages.
 
-However, CAD is computationally expensive, with a worst-case complexity that is doubly exponential in the number of variables (Davenport and Heintz, 1987}. Despite this, many real-world examples are tractable, and advances in computational power and CAD theory have allowed us to solve more challenging cases.
+However, CAD is computationally expensive, with a worst-case complexity that is doubly exponential in the number of variables (Davenport and Heintz, 1988). Despite this, many real-world examples are tractable, and advances in computational power and CAD theory have allowed us to solve more challenging cases.
 
 For an overview of CAD and its theory, see:
 
