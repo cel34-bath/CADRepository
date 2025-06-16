@@ -20,10 +20,25 @@ However, CAD is computationally expensive, with a worst-case complexity that is 
 
 For an overview of CAD and its theory, see:
 
-- G.E. Collins, *Quantifier Elimination for Real Closed Fields by Cylindrical Algebraic Decomposition*, Springer, 1975.
-- Mats Jirstrand, *Cylindrical Algebraic Decomposition - an Introduction*, Technical Report, Linköping University, 1995.
-- J.H. Davenport & J. Heintz, *Real Quantifier Elimination is Doubly Exponential*, JSC 1988.  
+- G.E. Collins, *Quantifier Elimination for Real Closed Fields by Cylindrical Algebraic Decomposition*, Springer, 1975, DOI: [10.1007/3-540-07407-4_17](https://doi.org/10.1007/3-540-07407-4_17)
+- Dennis S. Arnon, George E. Collins & Scott McCallum, *Cylindrical Algebraic Decomposition I: The Basic Algorithm*, *SIAM Journal on Computing*, SIAM, 1984, DOI: [10.1137/0213054](https://doi.org/10.1137/0213054)
+- Mats Jirstrand, *[Cylindrical Algebraic Decomposition - an Introduction](https://www.diva-portal.org/smash/get/diva2:315832/FULLTEXT02.pdf)*, Technical Report, Linköping University, 1995.
+- J.H. Davenport & J. Heintz, *Real Quantifier Elimination is Doubly Exponential*, JSC 1988., DOI: [10.1016/S0747-7171(88)80004-X](https://doi.org/10.1016/S0747-7171(88)80004-X)
 - Maple's [RegularChains](https://www.maplesoft.com/support/help/Maple/view.aspx?path=RegularChains) and [QuantifierElimination](https://www.maplesoft.com/support/help/Maple/view.aspx?path=QuantifierElimination) packages.  
+
+Some applications of CAD include:
+
+Robotics and motion planning:
+- Jacob T. Schwartz & Micha Sharir, *On the “piano movers” problem I. The case of a two-dimensional rigid polygonal body moving amidst polygonal barriers*, *Communications on Pure and Applied Mathematics*, 1983, DOI: [10.1002/cpa.3160360305](https://doi.org/10.1002/cpa.3160360305)
+- David Wilson, James H. Davenport, Matthew England & Russell J. Bradford, *A “Piano Movers” Problem Reformulated*, *Proceedings of SYNASC 2013*, IEEE, 2013, DOI: [10.1109/SYNASC.2013.14](https://doi.org/10.1109/SYNASC.2013.14)
+- James H. Davenport, *A “piano movers” problem*, *ACM SIGSAM Bulletin*, ACM, 1986, DOI: [10.1145/12917.12919](https://doi.org/10.1145/12917.12919)
+- Montserrat Manubens, Guillaume Moroz, Damien Chablat, Philippe Wenger & Fabrice Rouillier, *Cusp Points in the Parameter Space of Degenerate 3-RPR Planar Parallel Manipulators*, *Journal of Mechanisms and Robotics*, ASME, 2012, DOI: [10.1115/1.4006921](https://doi.org/10.1115/1.4006921)
+
+Economics:
+- Casey B. Mulligan, James H. Davenport & Matthew England, *TheoryGuru: A Mathematica Package to Apply Quantifier Elimination Technology to Economics*, *Mathematical Software – ICMS 2018*, Springer, 2018, DOI: [10.1007/978-3-319-96418-8\_44](https://doi.org/10.1007/978-3-319-96418-8_44)
+
+Biology:
+- Gergely Röst & AmirHosein Sadeghimanesh, *Exotic Bifurcations in Three Connected Populations with Allee Effect*, *International Journal of Bifurcation and Chaos*, World Scientific, 2021, DOI: [10.1142/S0218127421502023](https://doi.org/10.1142/S0218127421502023)
 
 ---
 
