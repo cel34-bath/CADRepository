@@ -48,6 +48,17 @@ This is the first implementation of CAD in *Macaulay2*, allowing for the computa
 - Read the ArXiv pre-print [here](https://arxiv.org/abs/2503.21731)
 - Get started with Macaulay2 [here](https://www2.macaulay2.com/Macaulay2/)
 
+<table align="center" style="border-collapse: collapse;">
+  <tr>
+    <td align="center" style="padding: 1em;">
+      <picture><img src="resources/jirstrandgraphopen.png" alt="An Open CAD Graph" width="85%"/></picture>
+    </td>
+    <td align="center" style="padding: 1em;">
+      <picture><img src="resources/jirstrandcadtree.png" alt="An Open CAD Tree" width="87.5%"/></picture>
+    </td>
+  </tr>
+</table>
+
 ---
 
 ## CAD Graphing Tool
