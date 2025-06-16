@@ -12,9 +12,9 @@ However, CAD is computationally expensive, with a worst-case complexity that is 
 
 <table align="center" style="background-color: #f0f0f0; border: 0px solid #333; border-collapse: collapse;">
   <tr>
-    <td align="center"><img src="resources/cadgraph1.png" width="250"/></td>
+    <td align="center"><picture><img src="resources/cadgraph1.png" width="250"/></picture></td>
     <td align="center" style="font-size: 40px;">&#8594;</td>
-    <td align="center"><img src="resources/cadgraph2.png" width="250"/></td>
+    <td align="center"><picture><img src="resources/cadgraph2.png" width="250"/></picture></td>
   </tr>
 </table>
 
@@ -30,6 +30,13 @@ For an overview of CAD and its theory, see:
 ## Publications and Presentations
 
 This is a collection of publications and presentations I have given relating to CAD. See [`presentations/`](./presentations/).
+
+- August 2024: Slides for CICM 2024: [Topics in Cylindrical Algebraic Decomposition](./presentations/CICM_10_Min_Talk_Slides.pdf)
+- July 2024: Slides for ICMS 2024 at Durham University: [Cylindrical Algebraic Decomposition in Macaulay2](./presentations/M2_ICMS_Talk_Slides.pdf)
+- March 2023: Introductory slides for Warwick Conference: [Complexity of Cylindrical Algebraic Decompositions via Regular Chains](./presentations/Complexity%20of%20CAD%20via%20RC.pdf)
+- March 2023: Talk for Postgraduate Seminar Series: [Pivot! Using real algebraic geometry to move a sofa](./presentations/PSS_Talk.pdf)
+- October 2022: [Confirmation Report](./presentations/Confirmation_Report.pdf) and [associated slides](./presentations/Confirmation_Report_Slides.pdf)
+- August 2022: Five-Minute Slides for LMS-Bath Symposium on Combinatorial Algebraic Geometry: [Complexity of Cylindrical Algebraic Decompositions via Regular Chains](./presentations/Complexity%20of%20CADs%20via%20RC.pdf)
 
 ---
 
