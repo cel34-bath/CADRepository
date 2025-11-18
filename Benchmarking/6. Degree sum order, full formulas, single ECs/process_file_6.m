@@ -1,6 +1,6 @@
 #with(SMTLIB):
 #with(StringTools):
-#with(Logic):
+with(Logic):
 #with(CodeTools):
 QE := QuantifierElimination:
 interface(prettyprint = 0):
@@ -8,21 +8,26 @@ iter := 10;
 tlim := 240;
 
 text := SMTLIB:-ParseFile(filename):
-L := convert(QE:-QuantifierTools:-GetAllPolynomials(text), list):
-vars := convert(indets(L, name), list):
+L1 := convert(QE:-QuantifierTools:-GetAllPolynomials(text), list):
+read "../TimingsCommands.mpl";
+L2 := QE:-QuantifierTools:-ConvertToPrenexForm(text):
+L2 := Normalize(L2, form = DNF):
+L_QE := ConvertToPL(L2);
+L_RC := ConvertToRC(L2);
+vars := DegreeSumHeuristic(L1):
 
 rc_ordering := ListTools:-Reverse(vars):
 print("RC");
 rc_starttime := time[real]():
 try
-	tmp := timelimit(tlim,RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L,RegularChains:-PolynomialRing(rc_ordering),output = 'allcell',optimization = false)):
-	RC_result := timelimit(tlim*iter,CodeTools:-Usage(RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L,RegularChains:-PolynomialRing(rc_ordering),output = 'allcell',optimization = false),output = 'all',quiet = false,iterations = iter)):
+	tmp := timelimit(tlim,RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L_RC,RegularChains:-PolynomialRing(rc_ordering),output = 'allcell',optimization = 'EC')):
+	RC_result := timelimit(tlim*iter,CodeTools:-Usage(RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L_RC,RegularChains:-PolynomialRing(rc_ordering),output = 'allcell',optimization = 'EC'),output = 'all',quiet = false,iterations = iter)):
 	rc_memory := RC_result[bytesused]:
 	rc_cputime := RC_result[cputime]:
 	rc_realtime := RC_result[realtime]:
 	rc_cells := nops(RC_result[output]):
 catch "time expired":
-	RC_result := "TIME OUT":
+    RC_result := "TIME OUT":
 	rc_memory := RC_result:
 	rc_cputime := RC_result:
 	rc_realtime := RC_result:
@@ -41,8 +46,8 @@ qe_ordering := vars:
 print("QE");
 qe_starttime := time[real]():
 try
-	tmp := timelimit(tlim,QE:-CylindricalAlgebraicDecompose(L,variablestrategy = qe_ordering,propagateecs = false,useequations = none,usegroebner = false)):
-    QE_result := timelimit(tlim*iter,CodeTools:-Usage(QE:-CylindricalAlgebraicDecompose(L,variablestrategy = qe_ordering,propagateecs = false,useequations = none,usegroebner = false),output = 'all',quiet = false,iterations = iter)):
+	tmp := timelimit(tlim,QE:-CylindricalAlgebraicDecompose(L_QE,variablestrategy = qe_ordering,propagateecs = false,useequations = 'single',usegroebner = false)):
+	QE_result := timelimit(tlim*iter,CodeTools:-Usage(QE:-CylindricalAlgebraicDecompose(L_QE,variablestrategy = qe_ordering,propagateecs = false,useequations = 'single',usegroebner = false),output = 'all',quiet = false,iterations = iter)):
 	qe_memory := QE_result[bytesused]:
 	qe_cputime := QE_result[cputime]:
 	qe_realtime := QE_result[realtime]:

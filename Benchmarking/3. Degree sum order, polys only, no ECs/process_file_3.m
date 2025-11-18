@@ -9,15 +9,15 @@ tlim := 240;
 
 text := SMTLIB:-ParseFile(filename):
 L := convert(QE:-QuantifierTools:-GetAllPolynomials(text), list):
-vars := convert(indets(L, name), list):
+read "../TimingsCommands.mpl";
+vars := DegreeSumHeuristic(L):
 
-# moved internally (QE's tonks is internal, so this makes it fairer, but still record it here for export.)
-rc_ordering := RegularChains:-SuggestVariableOrder(L,decomposition = cad):
+rc_ordering := ListTools:-Reverse(vars):
 print("RC");
 rc_starttime := time[real]():
 try
-	tmp := timelimit(tlim,RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L,RegularChains:-PolynomialRing(RegularChains:-SuggestVariableOrder(L,decomposition = cad)),output = 'allcell',optimization = false)):
-	RC_result := timelimit(tlim*iter,CodeTools:-Usage(RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L,RegularChains:-PolynomialRing(RegularChains:-SuggestVariableOrder(L,decomposition = cad)),output = 'allcell',optimization = false),output = 'all',quiet = false,iterations = iter)):
+	tmp := timelimit(tlim,RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L,RegularChains:-PolynomialRing(rc_ordering),output = 'allcell',optimization = false)):
+	RC_result := timelimit(tlim*iter,CodeTools:-Usage(RegularChains:-SemiAlgebraicSetTools:-CylindricalAlgebraicDecompose(L,RegularChains:-PolynomialRing(rc_ordering),output = 'allcell',optimization = false),output = 'all',quiet = false,iterations = iter)):
 	rc_memory := RC_result[bytesused]:
 	rc_cputime := RC_result[cputime]:
 	rc_realtime := RC_result[realtime]:
@@ -29,7 +29,7 @@ catch "time expired":
 	rc_realtime := RC_result:
 	rc_cells := RC_result:
 catch:
-	RC_result := cat("ERROR: ", lastexception[2]):
+    RC_result := cat("ERROR: ", lastexception[2]):
 	rc_memory := RC_result:
 	rc_cputime := RC_result:
 	rc_realtime := RC_result:
@@ -38,12 +38,12 @@ end try:
 print("RC time taken");
 time[real]() - rc_starttime;
 
-qe_ordering := tonks:
+qe_ordering := vars:
 print("QE");
 qe_starttime := time[real]():
 try
-	tmp := timelimit(tlim,QE:-CylindricalAlgebraicDecompose(L,variablestrategy = tonks,propagateecs = false,useequations = none,usegroebner = false)):
-	QE_result := timelimit(tlim*iter,CodeTools:-Usage(QE:-CylindricalAlgebraicDecompose(L,variablestrategy = tonks,propagateecs = false,useequations = none,usegroebner = false),output = 'all',quiet = false,iterations = iter)):
+	tmp := timelimit(tlim,QE:-CylindricalAlgebraicDecompose(L,variablestrategy = qe_ordering,propagateecs = false,useequations = none,usegroebner = false)):
+    QE_result := timelimit(tlim*iter,CodeTools:-Usage(QE:-CylindricalAlgebraicDecompose(L,variablestrategy = qe_ordering,propagateecs = false,useequations = none,usegroebner = false),output = 'all',quiet = false,iterations = iter)):
 	qe_memory := QE_result[bytesused]:
 	qe_cputime := QE_result[cputime]:
 	qe_realtime := QE_result[realtime]:
@@ -63,5 +63,5 @@ catch:
 end try:
 print("QE time taken");
 time[real]() - qe_starttime;
-QE:-CADData:-PrintProjection(QE_result[output]):
+#QE:-CADData:-PrintProjection(QE_result[output]):
 #quit();

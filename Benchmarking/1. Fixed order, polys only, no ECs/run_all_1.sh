@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set directory containing the .smt2 files
-target_dir="C:/Users/Corin Work/Documents/GitHub/CADStuff/MAPLE BENCHMARKING/Alicode/meti-tarski/polypaver/sqrt43-int/3vars"
+target_dir="../meti-tarki-polypaver-sqrt43-int-3vars-ECMOD"
 timestamp=$(date "+%Y-%m-%d_%H-%M-%S")
 logfile="logfile_$timestamp.log"
 mapledir="C:/Program Files/Maple 2024/bin.X86_64_WINDOWS"
@@ -24,7 +24,7 @@ for file in "$target_dir"/*.smt2; do
         cat <<EOF
 printf("\n");
 printf("RC\n");
-
+rc_ordering := ListTools:-Reverse(rc_ordering):
 if RC_result = "TIME OUT" then
 	rc_ordering := "TIME OUT":
 	rc_memory := "TIME OUT":
