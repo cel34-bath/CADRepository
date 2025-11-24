@@ -80,7 +80,7 @@ This is the first implementation of CAD in *Macaulay2*, allowing for the computa
 
 A tool for *Maple* that visualizes 2D CADs using color-coded cells. Compatible with outputs from Maple's *RegularChains* and *QuantifierElimination* packages.
 
-- The graphing tool: [`CAD_GraphingTool/`](./CAD_GraphingTool/)
+- The graphing tool: [`GraphCAD/`](./GraphCAD/)
 
 ---
 
